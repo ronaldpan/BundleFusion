@@ -1,0 +1,79 @@
+
+
+s_verbose = false;
+
+
+s_sendUplinkFeedbackImage = true;
+
+s_recordSolverConvergence = false;
+
+s_enablePerFrameTimings = true;
+s_enableGlobalTimings = true;  //计时
+
+s_widthSIFT = 640;
+s_heightSIFT = 480;
+
+s_minKeyScale = 3.0f;//5.0f;
+s_siftMatchThresh = 0.7f;//0.5f;
+s_siftMatchRatioMaxLocal = 0.8f;
+s_siftMatchRatioMaxGlobal = 0.8f;
+
+s_optMaxResThresh = 0.08f;			//not squared (per axis component)
+s_denseDistThresh = 0.15f;
+s_denseNormalThresh = 0.97f;
+s_denseColorThresh = 0.1f;
+s_denseColorGradientMin = 0.005f;
+s_denseDepthMin = 0.5f;
+s_denseDepthMax = 4.0f;
+s_denseOverlapCheckSubsampleFactor = 4;
+
+s_maxNumImages = 1200;//1200;  keyframe的最大数，数据中的总帧数 必须<= s_maxNumImages * s_submapSize
+s_submapSize = 30; //一个chunk中的frame数,原来是10。太大时路径会漂移
+s_maxNumKeysPerImage = 1024; // 每个frame的keypoint的最大数
+
+s_useLocalDense = true; //局部稠密match
+s_useGlobalDenseAtEnd = true;//扫描结束后进行全局优化
+s_numOptPerResidualRemoval = 1; 
+
+s_numLocalNonLinIterations =2; //原来是2
+s_numLocalLinIterations = 100;
+s_numGlobalNonLinIterations = 3; //原来是3
+s_numGlobalLinIterations = 150;
+
+//s_downsampledWidth = 160;
+//s_downsampledHeight = 120;
+s_downsampledWidth = 80;
+s_downsampledHeight = 60;
+
+
+//dense term filtering
+s_colorDownSigma = 2.5f;
+s_depthDownSigmaD = 1.0f;
+s_depthDownSigmaR = 0.05f;
+
+s_maxKabschResidual2 = 0.0016f; //值越大匹配的更多，默认0.0004f
+
+s_projCorrDistThres = 0.15f;
+s_projCorrNormalThres = 0.97f;
+s_projCorrColorThresh = 0.1f;
+
+s_verifySiftErrThresh = 0.075f;
+s_verifySiftCorrThresh = 0.02f;
+
+s_useLocalVerify = true;
+s_verifyOptErrThresh = 0.05f; 
+s_verifyOptCorrThresh = 0.001f;
+
+s_surfAreaPcaThresh = 0.032f;
+
+s_minNumMatchesLocal = 5;
+s_minNumMatchesGlobal = 5;
+
+// filtering 
+s_depthSigmaD = 2.0f;	//bilateral filter sigma domain
+s_depthSigmaR = 0.05f;	//bilateral filter sigma range
+s_depthFilter = true;	//bilateral filter enabled depth
+s_erodeSIFTdepth = true; //对深度进行形态处理
+
+s_useComprehensiveFrameInvalidation = true;
+
